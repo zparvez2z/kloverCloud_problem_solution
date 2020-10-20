@@ -45,7 +45,6 @@ def create_kacchi_table():
         print ("Error while creating PostgreSQL table", error)
 
     finally:
-        #closing database connection.
         if(connection):
             close_connection(cursor,connection)
 
@@ -73,7 +72,6 @@ def create_sellData_table():
         print ("Error while creating PostgreSQL table", error)
     
     finally:
-        #closing database connection.
         if(connection):
             close_connection(cursor,connection)
 
@@ -97,7 +95,6 @@ def add_item( name, price ):
             print("Failed to insert record into kacchi table", error)
 
     finally:
-        #closing database connection.
         if(connection):
             close_connection(cursor,connection)
 
@@ -110,7 +107,6 @@ def update_item_name( id, name):
         record = cursor.fetchone()
         print(record)
 
-        # Update single record now
         sql_update_query = """Update kacchi set name = %s where id = %s"""
         cursor.execute(sql_update_query, (name, id))
         connection.commit()
@@ -127,7 +123,6 @@ def update_item_name( id, name):
         print("Error in update operation", error)
 
     finally:
-        #closing database connection.
         if(connection):
             close_connection(cursor,connection)
 
@@ -140,7 +135,6 @@ def update_item_price( id, price):
         record = cursor.fetchone()
         print(record)
 
-        # Update single record now
         sql_update_query = """Update kacchi set price = %s where id = %s"""
         cursor.execute(sql_update_query, (price, id))
         connection.commit()
@@ -157,14 +151,12 @@ def update_item_price( id, price):
         print("Error in update operation", error)
 
     finally:
-        #closing database connection.
         if(connection):
             close_connection(cursor,connection)
 
 def delete_item(id):
     connection,cursor= get_connection()
     try:
-        # Update single record now
         sql_delete_query = """Delete from kacchi where id = %s"""
         cursor.execute(sql_delete_query, (id, ))
         connection.commit()
@@ -174,7 +166,6 @@ def delete_item(id):
     except (Exception, psycopg2.Error) as error:
         print("Error in Delete operation", error)
     finally:
-        #closing database connection.
         if(connection):
             close_connection(cursor,connection)
 
