@@ -10,5 +10,5 @@ def find_earlest_time(x, Array):
     return -1
 
 if __name__ == "__main__":
-    earliest_time = find_earlest_time(5,[1,2,3,2,3,4,3,4,5,4,5,6])
+    earliest_time = find_earlest_time(5,[1,3,1,4,2,3,5,4])
     print("earliest_time: {}".format(earliest_time))
