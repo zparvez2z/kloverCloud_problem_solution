@@ -1,0 +1,12 @@
+## Overview of MonoLithic Vs Microservice Architecture | which Architecture should i choose ? 
+[ Source Link](http://google.com)
+
+<p>The article compares between microservices and monolithic architecture, outlines the strengths and weaknesses of both approaches, and finds out which software architecture style will best fit a business.</p>
+<p>A monolithic application is built as a single and indivisible unit which comprises a client-side user interface, a server side-application, and a database. In a monolithic application area of functionality concerns only one application so it is easier to handle it. It is unified and all the functions are managed and served in one place.The monolithic approach is a standard way of building applications, any engineering team has knowledge and capabilities to develop a monolithic application.</p>
+<p>But, When a monolithic application scales up, it becomes too complicated to understand. It is harder to implement changes in such a large, complex application. You cannot scale components independently. it is extremely problematic to apply a new technology. This makes the overall development process much longer.</p>
+<p>If you have a small team, without enough microservices expertise, application is simple,and you aim to spend less initially and validate your business idea, then go for monolithic.</p>
+<p>Within a microservices architecture, the entire functionality is split up into independently deployable modules which communicate with each other through defined methods called APIs. Each service covers its own scope and can be updated, deployed, and scaled independently. So the entire process is more cost and time effective than with monoliths. All the changes and experiments are implemented with lower risks and fewer errors.</p>
+
+<p>But, as a microservice application includes independent services, all of them have to be deployed independently and the connections have to be handled carefully. A multitude of independently deployable components makes testing a microservices-based solution much harder.</p>
+<p>If you have enough microservices expertise, your application is complex and scalable. If you plan to develop a large application with multiple modules and user journeys, a microservice pattern would be the best way to handle it.</p>
+<p>Adopting a microservices architecture is not a one-size-fits-all approach. Microservices are ideal when it comes to the platforms covering many user journeys and workflows. It is more beneficial for complex and evolving applications.</p>
