@@ -102,19 +102,19 @@ def update_item_name( id, name):
     connection,cursor= get_connection()
     try:
         print("Table Before updating record ")
-        sql_select_query = """select * from kacchi where id = %s"""
+        sql_select_query = """SELECT * FROM kacchi where id = %s"""
         cursor.execute(sql_select_query, (id, ))
         record = cursor.fetchone()
         print(record)
 
-        sql_update_query = """Update kacchi set name = %s where id = %s"""
+        sql_update_query = """Update kacchi SET NAME = %s WHERE id = %s"""
         cursor.execute(sql_update_query, (name, id))
         connection.commit()
         count = cursor.rowcount
         print(count, "Record Updated successfully ")
 
         print("Table After updating record ")
-        sql_select_query = """select * from kacchi where id = %s"""
+        sql_select_query = """SELECT * FROM kacchi WHERE id = %s"""
         cursor.execute(sql_select_query, (id,))
         record = cursor.fetchone()
         print(record)
@@ -130,19 +130,19 @@ def update_item_price( id, price):
     connection,cursor= get_connection()
     try:
         print("Table Before updating record ")
-        sql_select_query = """select * from kacchi where id = %s"""
+        sql_select_query = """SELECT * FROM kacchi WHERE id = %s"""
         cursor.execute(sql_select_query, (id, ))
         record = cursor.fetchone()
         print(record)
 
-        sql_update_query = """Update kacchi set price = %s where id = %s"""
+        sql_update_query = """UPDATE kacchi set price = %s WHERE id = %s"""
         cursor.execute(sql_update_query, (price, id))
         connection.commit()
         count = cursor.rowcount
         print(count, "Record Updated successfully ")
 
         print("Table After updating record ")
-        sql_select_query = """select * from kacchi where id = %s"""
+        sql_select_query = """SELECT * FROM kacchi where id = %s"""
         cursor.execute(sql_select_query, (id,))
         record = cursor.fetchone()
         print(record)
@@ -157,7 +157,7 @@ def update_item_price( id, price):
 def delete_item(id):
     connection,cursor= get_connection()
     try:
-        sql_delete_query = """Delete from kacchi where id = %s"""
+        sql_delete_query = """DELETE FROM kacchi WHERE id = %s"""
         cursor.execute(sql_delete_query, (id, ))
         connection.commit()
         count = cursor.rowcount
@@ -172,7 +172,7 @@ def delete_item(id):
 def store_sell_data(item_id, number_of_plates):
     connection,cursor= get_connection()
     try:
-      sql_select_query = """select price from kacchi where id = %s"""
+      sql_select_query = """SELECT price FROM kacchi WHERE id = %s"""
       cursor.execute(sql_select_query, (item_id, ))
       record = cursor.fetchone()
       item_price = record[0]
